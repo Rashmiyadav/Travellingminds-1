@@ -1,0 +1,1113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Smoke-in-the-Air</title>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen"/>
+<link href="jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+<script src="scripts/jquery.easing.1.3.js" type="text/javascript"></script>
+<script src="scripts/jquery.mousewheel.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="scripts/pop-ups.js"></script>
+<script type="text/javascript" src="scripts/nav.js"></script>
+<style>
+@media only screen and (max-device-width: 480px) {
+.article #popupAbout {
+		float: none;
+		width: 300px;
+	}}</style>
+	
+	<script>
+function showUser(str)
+{
+if (str=="")
+  {
+  document.getElementById("txtHint").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","getuser.php?q="+str,true);
+xmlhttp.send();
+}
+</script>
+<script>
+
+function disp(str)
+{
+var xmlhttp;    
+if (str=="")
+  {
+  document.getElementById("txtHint").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","call.php?q="+str,true);
+xmlhttp.send();
+}
+
+</script>
+
+</head>
+
+<body>
+<hgroup>
+  <h1>Air Quality</h1>
+  <h4>Know the Air Quality <a href="" target="_blank"></a></h4>
+
+</hgroup>
+<nav>
+
+  <ul id="menu" class="menu">
+    <li> <a href="#" id="about"> <img src="images/1_menu.jpg" alt=""/> <span class="active"></span> <span class="wrap"> <span class="link">About</span> <span class="descr"></span> </span> </a> </li><br><br>
+    <li> <a href="#" id="projects"> <img src="images/2_menu.jpg" alt=""/> <span class="active"></span> <span class="wrap"> <span class="link">AIR QUALITY</span> <span class="descr"></span> </span> </a> </li><br><br>
+    <li> <a href="#" id="contact"> <img src="images/3_menu.jpg" alt=""/> <span class="active"></span> <span class="wrap"> <span class="link">Contact</span> <span class="descr"></span> </span> </a> </li>
+   </ul>
+</nav>
+<section id="bg">
+  <section id="overlay"></section>
+  <a href="#" class="nextImageBtn" title="next"></a><a href="#" class="prevImageBtn" title="previous"></a><img src="images/gallery/1.jpg" alt="" title="" id="bgimg" /></section>
+<div id="preloader"><img src="images/ajax-loader_dark.gif" width="32" height="32" alt="" /></div>
+<div id="img_title"></div>
+<div id="toolbar"><a href="#" title="Maximize" onClick="ImageViewMode('full');return false"><img src="images/toolbar_fs_icon.png" width="50" height="50" alt="" /></a></div>
+<div id="thumbnails_wrapper">
+  <div id="outer_container">
+    <div class="thumbScroller">
+      <div class="container">
+        <div class="content">
+          <div><a href="images/gallery/1.jpg"><img src="images/gallery/1_thumb.jpg" title="" alt="BURNING THE AIR" class="thumb" /></a></div>
+        </div>
+        <div class="content">
+          <div><a href="images/gallery/2.jpg"><img src="images/gallery/2_thumb.jpg" title="SMOKING HIGH" alt="SMOKING HIGH" class="thumb" /></a></div>
+        </div>
+        <div class="content">
+          <div><a href="images/gallery/3.jpg"><img src="images/gallery/3_thumb.jpg" title="CHIMNEY DRAINS" alt="Third Title" class="thumb" /></a></div>
+        </div>
+        <div class="content">
+          <div><a href="images/gallery/4.jpg"><img src="images/gallery/4_thumb.jpg" title="AIR BURNT" alt="Fourth Title" class="thumb" /></a></div>
+        </div>
+        <div class="content">
+          <div><a href="images/gallery/5.jpg"><img src="images/gallery/5_thumb.jpg" title="SMOKY AIR" alt="SMOKY AIR" class="thumb" /></a></div>
+        </div>
+        <div class="content">
+          <div><a href="images/gallery/6.jpg"><img src="images/gallery/6_thumb.jpg" title="CRYING ENVIRONMENT" alt="CRYING ENVIRONMENT" class="thumb" /></a></div>
+        </div>
+        <div class="content">
+          <div><a href="images/gallery/1.jpg"><img src="images/gallery/1_thumb.jpg" title="" alt="BURNING THE AIR" class="thumb" /></a></div>
+        </div>
+        <div class="content">
+          <div><a href="images/gallery/2.jpg"><img src="images/gallery/2_thumb.jpg" title="SMOKING HIGH" alt="SMOKING HIGH" class="thumb" /></a></div>
+        </div>
+        <div class="content">
+          <div><a href="images/gallery/3.jpg"><img src="images/gallery/3_thumb.jpg" title="CHIMNEY DRAINS" alt="CHIMNEY DRAINS" class="thumb" /></a></div>
+        </div>
+        <div class="content">
+          <div><a href="images/gallery/4.jpg"><img src="images/gallery/4_thumb.jpg" title="AIR BURNT" alt="AIR BURNT" class="thumb" /></a></div>
+        </div>
+        <div class="content">
+          <div><a href="images/gallery/5.jpg"><img src="images/gallery/5_thumb.jpg" title="SMOKY AIR" alt="SMOKY AIR" class="thumb" /></a></div>
+        </div>
+        <div class="content">
+          <div><a href="images/gallery/6.jpg"><img src="images/gallery/6_thumb.jpg" title="CRYING ENVIRONMENT" alt="CRYING ENVIRONMENT" class="thumb" /></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<article id="popupAbout" class="popupAbout">
+  
+    <div class="container">
+      <div class="content"> <a id="popupAboutClose"><img src="images/cross.png" width="20" alt="" /></a>
+        <h1>About</h1>
+		<H2>AIR QUALITY INDEX(AQI)</H2>
+        <p><img src="" alt="" class="image"/>The AQI is an index for reporting daily air quality. It tells you how clean or polluted your air is, and what associated health effects might be a concern for you. The AQI focuses on health effects you may experience within a few hours or days after breathing polluted air. EPA calculates the AQI for five major air pollutants regulated by the Clean Air Act: ground-level ozone, particle pollution (also known as particulate matter), carbon monoxide, sulfur dioxide, and nitrogen dioxide. For each of these pollutants, EPA has established national air quality standards to protect public health .Ground-level ozone and airborne particles are the two pollutants that pose the greatest threat to human health in this country.</p>
+		<h2>Here's how an AQI is determined:</h2>
+		<ul>
+		<li>At the end of each hour, the concentration of each pollutant, measured at each site, is converted into a number ranging from zero upwards, using a common scale, or index. The calculated number for each pollutant is referred to as a sub-index. </li>
+		<li>At a given site, the highest sub-index for any given hour becomes the AQI reading for that hour. The index is a relative scale, in that, the lower the index, the better the air quality.</li></ul>
+		<h2>Here's what the readings mean:</h2>
+		<ul>
+		<li>If the AQI reading is below 16, the air quality is in the very good category.</li>
+		<li>If the AQI reading is in the range of 16 to 31, the air quality is in the good category.</li>
+		<li>If the AQI reading is in the range of 32 to 49, the air quality is in the moderate category, and there may be some adverse effects for very sensitive people. </li>
+		<li>If the AQI reading is in the range of 50 to 99, the air quality is in the poor category, and may have adverse effects for sensitive members of human and animal populations, and may cause significant damage to vegetation and property. </li>
+      <li>If the AQI reading is above 99, the air quality is in the very poor category, and may have adverse effects for a large proportion of those exposed.</li>
+	  </ul>
+	  </div>
+    </div>
+    <div class="dragger_container">
+      <div class="dragger"></div>
+    </div>
+    <a class="scrollUpBtn" href="#"></a> <a class="scrollDownBtn" href="#"></a> 
+</article>
+<article id="popupProjects" class="popupProjects">
+  
+    <div class="container">
+      <div class="content"> <a id="popupProjectsClose"><img src="images/cross.png" width="20" alt="" /></a>
+        <center>
+		<h1>AIR QUALITY</h1>
+  <h3>WANT TO KNOW THE AIR QUALITY OF YOUR CITY..??</h3>
+ <p></p>
+  <form>
+<select name="State" onchange="showUser(this.value)">
+<option value="" selected>State</option>
+
+<option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
+<option value="CHANDIGARH">CHANDIGARH</option>
+<option value="CHHATTISGARH">CHHATTISGARH</option>
+<option value="DADAR AND NAGAR HAVELI" >DADAR AND NAGAR HAVELI</option>
+<option value="DAMAN AND DIU">DAMAN AND DIU</option>
+<option value="DELHI">DELHI</option>
+<option value="GOA">GOA</option>
+<option value="GUJARAT">GUJARAT</option>
+<option value="HARYANA">HARYANA</option>
+<option value="HIMACHAL PRADESH" >HIMACHAL PRADESH</option>
+<option value="JAMMU AND KASHMIR">JAMMU AND KASHMIR</option>
+<option value="JHARKHAND">JHARKHAND</option>
+<option value="KARNATAKA">KARNATAKA</option>
+<option value="KERALA">KERALA</option>
+<option value="LAKSHADWEEP">LAKSHADWEEP</option>
+<option value="MADHYA PRADESH">MADHYA PRADESH</option>
+<option value="MAHARASHTRA">MAHARASHTRA</option>
+<option value="MANIPUR">MANIPUR</option>
+<option value="MEGHALAYA">MEGHALAYA</option>
+<option value="MIZORAM">MIZORAM</option>
+<option value="NAGALAND">NAGALAND</option>
+<option value="ODISSA">ODISSA</option>
+<option value="PUDUCHERRY">PUDUCHERRY</option>
+<option value="PUNJAB">PUNJAB</option>
+<option value="RAJASHTAN">RAJASTHAN</option>
+<option value="TAMIL NADU">TAMIL NADU</option>
+<option value="UTTAR PRADESH">UTTAR PRADESH</option>
+<option value="UTTARAKHAND">UTTARAKHAND</option>
+<option value="WEST BENGAL">WEST BENGAL</option>
+</select>
+
+
+
+
+</form>
+<br>
+<div id="txtHint"><b>Citywise data will be listed here.</b></div><BR><BR>
+</center>
+  <h2>AIR QUALITY INDEX CALCULATOR:</h2>
+  <p>
+  </p>
+  <script type="text/javascript">
+function Linear(AQIhigh, AQIlow, Conchigh, Conclow, Concentration)
+{
+var linear;
+var Conc=parseFloat(Concentration);
+var a;
+a=((Conc-Conclow)/(Conchigh-Conclow))*(AQIhigh-AQIlow)+AQIlow;
+linear=Math.round(a);
+return linear;
+}
+
+function AQIPM25(Concentration)
+{
+var Conc=parseFloat(Concentration);
+var c;
+var AQI;
+c=(Math.floor(10*Conc))/10;
+if (c>=0 && c<12.1)
+{
+	AQI=Linear(50,0,12,0,c);
+}
+else if (c>=12.1 && c<35.5)
+{
+	AQI=Linear(100,51,35.4,12.1,c);
+}
+else if (c>=35.5 && c<55.5)
+{
+	AQI=Linear(150,101,55.4,35.5,c);
+}
+else if (c>=55.5 && c<150.5)
+{
+	AQI=Linear(200,151,150.4,55.5,c);
+}
+else if (c>=150.5 && c<250.5)
+{
+	AQI=Linear(300,201,250.4,150.5,c);
+}
+else if (c>=250.5 && c<350.5)
+{
+	AQI=Linear(400,301,350.4,250.5,c);
+}
+else if (c>=350.5 && c<500.5)
+{
+	AQI=Linear(500,401,500.4,350.5,c);
+}
+else
+{
+	AQI="Out of Range";
+}
+return AQI;
+}
+//line63
+function AQIPM10(Concentration)
+{
+var Conc=parseFloat(Concentration);
+var c;
+var AQI;
+c=Math.floor(Conc);
+if (c>=0 && c<55)
+{
+	AQI=Linear(50,0,54,0,c);
+}
+else if (c>=55 && c<155)
+{
+	AQI=Linear(100,51,154,55,c);
+}
+else if (c>=155 && c<255)
+{
+	AQI=Linear(150,101,254,155,c);
+}
+else if (c>=255 && c<355)
+{
+	AQI=Linear(200,151,354,255,c);
+}
+else if (c>=355 && c<425)
+{
+	AQI=Linear(300,201,424,355,c);
+}
+else if (c>=425 && c<505)
+{
+	AQI=Linear(400,301,504,425,c);
+}
+else if (c>=505 && c<605)
+{
+	AQI=Linear(500,401,604,505,c);
+}
+else
+{
+	AQI="Out of Range";
+}
+return AQI;
+}
+//line104
+function AQICO(Concentration)
+{
+var Conc=parseFloat(Concentration);
+var c;
+var AQI;
+c=(Math.floor(10*Conc))/10;
+if (c>=0 && c<4.5)
+{
+	AQI=Linear(50,0,4.4,0,c);
+}
+else if (c>=4.5 && c<9.5)
+{
+	AQI=Linear(100,51,9.4,4.5,c);
+}
+else if (c>=9.5 && c<12.5)
+{
+	AQI=Linear(150,101,12.4,9.5,c);
+}
+else if (c>=12.5 && c<15.5)
+{
+	AQI=Linear(200,151,15.4,12.5,c);
+}
+else if (c>=15.5 && c<30.5)
+{
+	AQI=Linear(300,201,30.4,15.5,c);
+}
+else if (c>=30.5 && c<40.5)
+{
+	AQI=Linear(400,301,40.4,30.5,c);
+}
+else if (c>=40.5 && c<50.5)
+{
+	AQI=Linear(500,401,50.4,40.5,c);
+}
+else
+{
+	AQI="Out of Range";
+}
+return AQI;
+}
+//line145
+function AQISO21hr(Concentration)
+{
+var Conc=parseFloat(Concentration);
+var c;
+var AQI;
+c=Math.floor(Conc);
+if (c>=0 && c<36)
+{
+	AQI=Linear(50,0,35,0,c);
+}
+else if (c>=36 && c<76)
+{
+	AQI=Linear(100,51,75,36,c);
+}
+else if (c>=76 && c<186)
+{
+	AQI=Linear(150,101,185,76,c);
+}
+else if (c>=186 && c<=304)
+{
+	AQI=Linear(200,151,304,186,c);
+}
+else if (c>=304 && c<=604)
+{
+	AQI="SO2message";
+}
+else
+{
+	AQI="Out of Range";
+}
+return AQI;
+}
+function AQISO224hr(Concentration)
+{
+var Conc=parseFloat(Concentration);
+var c;
+var AQI;
+c=Math.floor(Conc);
+if (c>=0 && c<=304)
+{
+	AQI="SO2message";
+}
+
+else if (c>=304 && c<605)
+{
+	AQI=Linear(300,201,604,305,c);
+}
+else if (c>=605 && c<805)
+{
+	AQI=Linear(400,301,804,605,c);
+}
+else if (c>=805 && c<=1004)
+{	
+	AQI=Linear(500,401,1004,805,c);
+}
+else
+{
+	AQI="Out of Range";
+}
+return AQI;
+}
+//line186
+function AQIOzone8hr(Concentration)
+{
+var Conc=parseFloat(Concentration);
+var c;
+var AQI;
+c=(Math.floor(Conc))/1000;
+
+if (c>=0 && c<.060)
+{
+	AQI=Linear(50,0,0.059,0,c);
+}
+else if (c>=.060 && c<.076)
+{
+	AQI=Linear(100,51,.075,.060,c);
+}
+else if (c>=.076 && c<.096)
+{
+	AQI=Linear(150,101,.095,.076,c);
+}
+else if (c>=.096 && c<.116)
+{
+AQI=Linear(200,151,.115,.096,c);
+}
+else if (c>=.116 && c<.375)
+{
+	AQI=Linear(300,201,.374,.116,c);
+}
+else if (c>=.375 && c<.605)
+{
+	AQI="O3message";
+}
+else
+{
+	AQI="Out of Range";
+}
+return AQI;
+}
+//line219
+
+function AQIOzone1hr(Concentration)
+{
+var Conc=parseFloat(Concentration);
+var c;
+var AQI;
+c=(Math.floor(Conc))/1000;
+if (c>=.125 && c<.165)
+{
+	AQI=Linear(150,101,.164,.125,c);
+}
+else if (c>=.165 && c<.205)
+{
+	AQI=Linear(200,151,.204,.165,c);
+}
+else if (c>=.205 && c<.405)
+{
+	AQI=Linear(300,201,.404,.205,c);
+}
+else if (c>=.405 && c<.505)
+{
+	AQI=Linear(400,301,.504,.405,c);
+}
+else if (c>=.505 && c<.605)
+{
+
+
+	AQI=Linear(500,401,.604,.505,c);
+}
+else
+{
+	AQI="Out of Range";
+}
+return AQI;
+}
+
+function AQINO2(Concentration)
+{
+var Conc=parseFloat(Concentration);
+var c;
+var AQI;
+c=(Math.floor(Conc))/1000;
+if (c>=0 && c<.054)
+{
+	AQI=Linear(50,0,.053,0,c);
+}
+else if (c>=.054 && c<.101)
+{
+	AQI=Linear(100,51,.100,.054,c);
+}
+else if (c>=.101 && c<.361)
+{
+	AQI=Linear(150,101,.360,.101,c);
+}
+else if (c>=.361 && c<.650)
+{
+	AQI=Linear(200,151,.649,.361,c);
+}
+else if (c>=.650 && c<1.250)
+{
+	AQI=Linear(300,201,1.249,.650,c);
+}
+else if (c>=1.250 && c<1.650)
+{
+	AQI=Linear(400,301,1.649,1.250,c);
+}
+else if (c>=1.650 && c<=2.049)
+{
+	AQI=Linear(500,401,2.049,1.650,c);
+}
+else
+{
+	AQI="Out of Range";
+}
+return AQI;
+}
+
+function AQICategory(AQIndex)
+{
+var AQI=parseFloat(AQIndex)
+var AQICategory;
+if (AQI<=50)
+{
+	AQICategory="Good";
+}
+else if (AQI>50 && AQI<=100)
+{
+	AQICategory="Moderate";
+}
+else if (AQI>100 && AQI<=150)
+{
+	AQICategory="Unhealthy for Sensitive Groups";
+}
+else if (AQI>150 && AQI<=200)
+{
+	AQICategory="Unhealthy";
+}
+else if (AQI>200 && AQI<=300)
+{
+	AQICategory="Very Unhealthy";
+}
+else if (AQI>300 && AQI<=400)
+{
+	AQICategory="Hazardous";
+}
+else if (AQI>400 && AQI<=500)
+{
+	AQICategory="Hazardous";
+}
+else
+{
+	AQICategory="Out of Range";
+}
+return AQICategory;
+}
+//316
+
+function ClearColor()
+{
+
+	document.form.outputbox2.style.backgroundColor="white";
+	
+}
+
+function UnitDetermin(form)
+{
+//var form
+
+document.form.txtunit.style.textAlign="center";
+document.form.outputbox2.style.backgroundColor="white";
+
+document.form.inputbox.value="";
+document.form.outputbox1.value="";
+document.form.outputbox2.value="";
+document.form.TextSensitive.value="";
+document.form.HealthEffects.value="";
+document.form.Cautionary.value="";
+
+if (document.form.pollutant.selectedIndex == '1' || document.form.pollutant.selectedIndex == '2')
+{
+	document.form.txtunit.value="ug/m3";	
+}
+else if (document.form.pollutant.selectedIndex == '3')
+{
+	document.form.txtunit.value="ppm";	
+}
+else if (document.form.pollutant.selectedIndex == '4' || document.form.pollutant.selectedIndex == '5' || document.form.pollutant.selectedIndex == '6' || form.pollutant.selectedIndex == '7' || form.pollutant.selectedIndex == '8')
+{
+	document.form.txtunit.value="ppb";	
+}
+return true;
+}
+
+function AQICalc(form)
+{
+var b;
+
+document.form.inputbox.style.textAlign="center";
+document.form.inputbox.style.backgroundColor="white";
+
+var f;
+f=document.form.inputbox.value
+f=f.replace(/\,/,'');
+
+if (document.form.pollutant.selectedIndex == '0')
+{
+	alert("You have not selected a pollutant.");	
+}
+if (document.form.pollutant.selectedIndex == '1')
+{
+	b=AQIPM25(f);	
+}
+else if (document.form.pollutant.selectedIndex == '2')
+{
+	b=AQIPM10(f);	
+}
+else if (document.form.pollutant.selectedIndex == '3')
+{
+	b=AQICO(f);	
+}
+else if (document.form.pollutant.selectedIndex == '4')
+{
+	b=AQISO21hr(f);	
+}
+else if (document.form.pollutant.selectedIndex == '5')
+{
+	b=AQISO224hr(f);	
+}
+else if (document.form.pollutant.selectedIndex == '6')
+{
+	b=AQIOzone8hr(f);	
+}
+else if (document.form.pollutant.selectedIndex == '7')
+{
+	b=AQIOzone1hr(f);	
+}
+else if (document.form.pollutant.selectedIndex == '8')
+{
+	b=AQINO2(f);	
+}
+if (b == "Out of Range")
+{
+	alert("The concentration number you've entered is out of range for this pollutant.");
+	document.form.inputbox.value=" ";
+	document.form.outputbox1.value=" ";
+	document.form.outputbox2.value=" ";
+	document.form.TextSensitive.value="";
+	document.form.HealthEffects.value="";
+	document.form.Cautionary.value="";
+}
+
+else if (b == "SO2message")
+{
+	alert("1-hr SO2 values do not define higher AQI values ( >= 201 ).  AQI values of 201 or greater are calculated with 24-hour SO2 concentrations.");
+	document.form.inputbox.value=" ";
+	document.form.outputbox1.value=" ";
+	document.form.outputbox2.value=" ";
+	document.form.TextSensitive.value="";
+	document.form.HealthEffects.value="";
+	document.form.Cautionary.value="";
+}
+
+
+else if (b == "O3message")
+{
+	alert("8-hour ozone values do not define higher AQI values (>=301).  AQI values of 301 or greater are calculated with 1-hour ozone concentrations.");
+	document.form.inputbox.value=="";
+	document.form.outputbox1.value=="";
+	document.form.outputbox2.value=="";
+	document.form.TextSensitive.value=="";
+	document.form.HealthEffects.value=="";
+	document.form.Cautionary.value=="";
+}
+
+else
+{
+	document.form.outputbox1.value=b;
+	document.form.outputbox2.value=AQICategory(b);
+}
+document.form.outputbox1.style.textAlign="center";
+document.form.outputbox2.style.textAlign="center";
+document.form.TextSensitive.style.textAlign="center";
+document.form.HealthEffects.style.textAlign="center";
+document.form.Cautionary.style.textAlign="center";
+
+if (document.form.outputbox2.value == 'Good')
+{
+	document.form.outputbox2.style.backgroundColor="#00e000";
+	document.form.outputbox2.style.color="black";
+	document.form.HealthEffects.value="None";
+	document.form.Cautionary.value="None";
+	if (document.form.pollutant.selectedIndex == '1')
+	{
+		document.form.TextSensitive.value="People with respiratory or heart disease, the elderly and children are the groups most at risk.";
+	}
+	else if (document.form.pollutant.selectedIndex == '2')
+	{
+		document.form.TextSensitive.value="People with respiratory disease are the group most at risk.";
+	}
+	else if (document.form.pollutant.selectedIndex == '3')
+	{
+		document.form.TextSensitive.value="People with heart disease are the group most at risk.";
+	}
+	else if (document.form.pollutant.selectedIndex == '4' || form.pollutant.selectedIndex == '5')
+	{
+		document.form.TextSensitive.value="People with asthma are the group most at risk.";
+	}
+	else if (document.form.pollutant.selectedIndex == '6' || form.pollutant.selectedIndex == '7')
+	{
+		document.form.TextSensitive.value="Children and people with asthma are the groups most at risk.";
+	}
+	else if (document.form.pollutant.selectedIndex == '8')
+	{
+		document.form.TextSensitive.value="People with asthma or other respiratory diseases, the elderly, and children are the groups most at risk.";
+	}
+}
+else if (document.form.outputbox2.value == 'Moderate')
+{
+	document.form.outputbox2.style.backgroundColor="#ffff00";
+	document.form.outputbox2.style.color="black";
+	if (document.form.pollutant.selectedIndex == '1')
+	{
+		document.form.TextSensitive.value="People with respiratory or heart disease, the elderly and children are the groups most at risk.";
+		document.form.HealthEffects.value="Unusually sensitive people should consider reducing prolonged or heavy exertion.";
+		document.form.Cautionary.value="Unusually sensitive people should consider reducing prolonged or heavy exertion.";	
+	}
+	else if (document.form.pollutant.selectedIndex == '2')
+	{
+		document.form.TextSensitive.value="People with respiratory disease are the group most at risk.";
+		document.form.HealthEffects.value="Unusually sensitive people should consider reducing prolonged or heavy exertion.";
+		document.form.Cautionary.value="Unusually sensitive people should consider reducing prolonged or heavy exertion.";	
+	}
+	else if (document.form.pollutant.selectedIndex == '3')
+	{
+		document.form.TextSensitive.value="People with heart disease are the group most at risk.";
+		document.form.HealthEffects.value="None";
+		document.form.Cautionary.value="None";	
+	}
+	else if (document.form.pollutant.selectedIndex == '4' || form.pollutant.selectedIndex == '5')
+	{
+		document.form.TextSensitive.value="People with asthma are the group most at risk.";
+		document.form.HealthEffects.value="None";
+		document.form.Cautionary.value="None";	
+	}
+	else if (document.form.pollutant.selectedIndex == '6' || form.pollutant.selectedIndex == '7')
+	{
+		document.form.TextSensitive.value="Children and people with asthma are the groups most at risk.";
+		if (document.form.pollutant.selectedIndex == '6')
+		{
+			document.form.HealthEffects.value="Unusually sensitive individuals may experience respiratory symptoms.";
+			document.form.Cautionary.value="Unusually sensitive people should consider limiting prolonged outdoor exertion.";
+		}
+	}
+	else if (document.form.pollutant.selectedIndex == '8')
+	{
+		document.form.TextSensitive.value="People with asthma or other respiratory diseases, the elderly, and children are the groups most at risk.";
+		document.form.HealthEffects.value="Unusually sensitive individuals may experience respiratory symptoms.";
+		document.form.Cautionary.value="Unusually sensitive people should consider reducing prolonged or heavy outdoor exertion.";
+	}
+}
+else if (document.form.outputbox2.value == 'Unhealthy for Sensitive Groups')
+{
+	document.form.outputbox2.style.backgroundColor="#ff7600";
+	document.form.outputbox2.style.color="black";
+	if (document.form.pollutant.selectedIndex == '1')
+	{
+		document.form.TextSensitive.value="People with respiratory or heart disease, the elderly and children are the groups most at risk.";
+		document.form.HealthEffects.value="Increasing likelihood of respiratory symptoms in sensitive individuals, aggravation of heart or lung disease and premature mortality in persons with cardiopulmonary disease and the elderly.";
+		document.form.Cautionary.value="People with respiratory or heart disease, the elderly and children should limit prolonged exertion.";
+	}
+	else if (document.form.pollutant.selectedIndex == '2')
+	{
+		document.form.TextSensitive.value="People with respiratory disease are the group most at risk.";
+		document.form.HealthEffects.value="Increasing likelihood of respiratory symptoms	and aggravation	of lung disease, such as asthma.";
+		document.form.Cautionary.value="People with respiratory	disease, such as asthma, should	limit outdoor exertion.";
+	}
+	else if (document.form.pollutant.selectedIndex == '3')
+	{
+		document.form.TextSensitive.value="People with heart disease are the group most at risk.";
+		document.form.HealthEffects.value="Increasing likelihood of reduced exercise tolerance due to increased cardiovascular symptoms, such as chest pain, in people with cardiovascular disease.";
+		document.form.Cautionary.value="People with cardiovascular disease, such as angina, should limit heavy exertion and avoid sources of CO, such as heavy traffic.";
+	}
+	else if (document.form.pollutant.selectedIndex == '4' || form.pollutant.selectedIndex == '5')
+	{
+		document.form.TextSensitive.value="People with asthma are the group most at risk.";
+		document.form.HealthEffects.value="Increasing likelihood of respiratory symptoms, such as chest tightness and breathing discomfort, in people with asthma.";
+		document.form.Cautionary.value="People with asthma should consider limiting outdoor exertion.";
+	}
+	else if (document.form.pollutant.selectedIndex == '6' || form.pollutant.selectedIndex == '7')
+	{
+		document.form.HealthEffects.value="Increasing likelihood of respiratory symptoms and breathing discomfort in active children and adults and people with respiratory disease, such as asthma.";
+		document.form.TextSensitive.value="Children and people with asthma are the groups most at risk.";
+		if (document.form.pollutant.selectedIndex == '6')
+		{
+			document.form.Cautionary.value="Active children and adults, and people with respiratory disease, such as asthma, should limit prolonged outdoor exertion.";
+		}
+		else if (document.form.pollutant.selectedIndex == '7')
+		{
+			document.form.Cautionary.value="Active children and adults, and people with respiratory disease, such as asthma, should limit heavy outdoor exertion.";
+		}
+	}
+	else if (document.form.pollutant.selectedIndex == '8')
+	{
+		document.form.TextSensitive.value="People with asthma or other respiratory diseases, the elderly, and children are the groups most at risk.";
+		document.form.HealthEffects.value="Increasing likelihood of respiratory symptoms and breathing discomfort in active children, the elderly, and people with lung disease, such as asthma.";
+		document.form.Cautionary.value="Active children, the elderly, and people with lung disease, such as asthma, should reduce prolonged or heavy outdoor exertion.";
+	}
+}
+else if (document.form.outputbox2.value == 'Unhealthy')
+{
+	document.form.outputbox2.style.backgroundColor="#ff0000";
+	document.form.outputbox2.style.color="black";
+	if (document.form.pollutant.selectedIndex == '1')
+	{
+		document.form.TextSensitive.value="People with respiratory or heart disease, the elderly and children are the groups most at risk.";
+		document.form.HealthEffects.value="Increased aggravation of heart or lung disease and premature mortality in persons with cardiopulmonary disease and the elderly; increased respiratory effects in general population.";
+		document.form.Cautionary.value="People with respiratory or heart disease, the elderly and children should avoid prolonged exertion; everyone else should limit prolonged exertion.";
+	}
+	else if (document.form.pollutant.selectedIndex == '2')
+	{
+		document.form.TextSensitive.value="People with respiratory disease are the group most at risk.";
+		document.form.HealthEffects.value="Increased respiratory symptoms and aggravation of lung disease, such as asthma; possible respiratory effects in general population.";
+		document.form.Cautionary.value=" ";
+	}
+	else if (document.form.pollutant.selectedIndex == '3')
+	{
+		document.form.TextSensitive.value="People with heart disease are the group most at risk.";
+		document.form.HealthEffects.value="Reduced exercise tolerance due to increased cardiovascular symptoms, such as chest pain, in people with cardiovascular disease.";
+		document.form.Cautionary.value="People with cardiovascular disease, such as angina, should limit moderate exertion and avoid sources of CO, such as heavy traffic.";
+	}
+	else if (document.form.pollutant.selectedIndex == '4' || form.pollutant.selectedIndex == '5')
+	{
+		document.form.TextSensitive.value="People with asthma are the group most at risk.";
+		document.form.HealthEffects.value="Increased respiratory symptoms, such as chest tightness and wheezing in people with asthma; possible aggravation of heart or lung disease.";
+		document.form.Cautionary.value="Children, asthmatics, and people with heart or lung disease should limit outdoor exertion.";
+	}
+	else if (document.form.pollutant.selectedIndex == '6' || form.pollutant.selectedIndex == '7')
+	{
+		document.form.TextSensitive.value="Children and people with asthma are the groups most at risk.";
+		document.form.HealthEffects.value="Greater likelihood of respiratory symptoms and breathing difficulty in active children and adults and people with respiratory disease, such as asthma; possible respiratory effects in general population.";
+		if (document.form.pollutant.selectedIndex == '6')
+		{		
+			document.form.Cautionary.value="Active children and adults, and people with respiratory disease, such as asthma, should avoid prolonged outdoor exertion; everyone else, especially children, should limit prolonged outdoor exertion.";
+		}
+		else if (document.form.pollutant.selectedIndex == '7')
+		{
+			document.form.Cautionary.value="Active children and adults, and people with respiratory disease, such as asthma, should avoid heavy outdoor exertion; everyone else, especially children, should limit heavy outdoor exertion.";
+		}	
+	}
+	else if (document.form.pollutant.selectedIndex == '8')
+	{
+		document.form.TextSensitive.value="People with asthma or other respiratory diseases, the elderly, and children are the groups most at risk.";
+		document.form.HealthEffects.value="Greater likelihood of respiratory symptoms in active children, the elderly, and people with lung disease, such as asthma; possible respiratory effects in general population.";
+		document.form.Cautionary.value="Active children, the elderly, and people with lung disease, such as asthma, should avoid prolonged or heavy outdoor exertion; everyone else, expecially children, should reduce prolonged or heavy outdoor exertion.";
+	}
+}
+else if (document.form.outputbox2.value == 'Very Unhealthy')
+{
+	document.form.outputbox2.style.backgroundColor="#990049";
+	document.form.outputbox2.style.color="#ffffff";
+	if (document.form.pollutant.selectedIndex == '1')
+	{
+		document.form.TextSensitive.value="People with respiratory or heart disease, the elderly and children are the groups most at risk.";
+		document.form.HealthEffects.value="Significant aggravation of heart or lung disease and premature mortality in persons with cardiopulmonary disease and the elderly; significant increase in respiratory effects in general population.";
+		document.form.Cautionary.value="People with respiratory or heart disease, the elderly and children should avoid any outdoor activity; everyone else should avoid prolonged exertion.";
+	}
+	else if (document.form.pollutant.selectedIndex == '2')
+	{
+		document.form.TextSensitive.value="People with respiratory disease are the group most at risk.";
+		document.form.HealthEffects.value="Significant increase in respiratory symptoms and aggravation of lung disease, such as asthma; increasing likelihood of respiratory effects in general population.";
+		document.form.Cautionary.value="People with respiratory disease, such as asthma, should avoid any outdoor activity; everyone else, especially the elderly and children, should limit outdoor exertion.";
+	}
+	else if (document.form.pollutant.selectedIndex == '3')
+	{
+		document.form.TextSensitive.value="People with heart disease are the group most at risk.";
+		document.form.HealthEffects.value="Significant aggravation of cardiovascular symptoms, such as chest pain, in people with cardiovascular disease.";
+		document.form.Cautionary.value="People with cardiovascular disease, such as angina, should avoid exertion and sources of CO, such as heavy traffic.";
+	}
+	else if (document.form.pollutant.selectedIndex == '4' || form.pollutant.selectedIndex == '5')
+	{
+		document.form.TextSensitive.value="People with asthma are the group most at risk.";
+		document.form.HealthEffects.value="Significant increase in respiratory symptoms, such as wheezing and shortness of breath, in people with asthma; aggravation of heart or lung disease.";
+		document.form.Cautionary.value="Children, asthmatics, and people with heart or lung disease should avoid outdoor exertion; everyone else should limit outdoor exertion.";
+	}
+	else if (document.form.pollutant.selectedIndex == '6' || document.form.pollutant.selectedIndex == '7')
+	{
+		document.form.TextSensitive.value="Children and people with asthma are the groups most at risk.";
+		document.form.HealthEffects.value="Increasingly severe symptoms and impaired breathing likely in active children and adults and people with respiratory disease, such as asthma; increasing likelihood of respiratory effects in general population.";	
+		document.form.Cautionary.value="Active children and adults, and people with respiratory disease, such as asthma, should avoid all outdoor exertion; everyone else, especially children, should limit outdoor exertion.";
+	}
+	else if (document.form.pollutant.selectedIndex == '8')
+	{
+		document.form.TextSensitive.value="People with asthma or other respiratory diseases, the elderly, and children are the groups most at risk.";
+		document.form.HealthEffects.value="Increasingly severe symptoms and impaired breathing likely in active children, the elderly, and people with lung disease, such as asthma; increasing likelihood of respiratory effects in general population.";
+		document.form.Cautionary.value="Active children, the elderly, and people with lung disease, such as asthma, should avoid all outdoor exertion; everyone else, especially children, should avoid prolonged or heavy outdoor exertion.";
+	}
+}
+else if (document.form.outputbox2.value == 'Hazardous')
+{
+	document.form.outputbox2.style.backgroundColor="#7E0023";
+	document.form.outputbox2.style.color="#ffffff";
+	if (document.form.pollutant.selectedIndex == '1')
+	{
+		document.form.TextSensitive.value="People with respiratory or heart disease, the elderly and children are the groups most at risk.";
+		document.form.HealthEffects.value="Serious aggravation of heart or lung disease and premature mortality in persons with cardiopulmonary disease and the elderly; serious risk of respiratory effects in general population.";
+		document.form.Cautionary.value="Everyone should avoid any outdoor exertion; people with respiratory or heart disease, the elderly and children should remain indoors.";
+	}
+	else if (document.form.pollutant.selectedIndex == '2')
+	{
+		document.form.TextSensitive.value="People with respiratory disease are the group most at risk.";
+		document.form.HealthEffects.value="Serious risk of respiratory symptoms and aggravation of lung disease, such as asthma; respiratory effects likely in general population.";
+		document.form.Cautionary.value="Everyone should avoid any outdoor exertion; people with respiratory disease, such as asthma, should remain indoors.";
+	}
+	else if (document.form.pollutant.selectedIndex == '3')
+	{
+		document.form.TextSensitive.value="People with heart disease are the group most at risk.";
+		document.form.HealthEffects.value="Serious aggravation of cardiovascular symptoms, such as chest pain, in people with cardiovascular disease; impairment of strenuous activities in general population.";
+		document.form.Cautionary.value="People with cardiovascular disease, such as angina, should avoid exertion and sources of CO, such as heavy traffic; everyone else should limit heavy exertion.";
+	}
+	else if (document.form.pollutant.selectedIndex == '4' || form.pollutant.selectedIndex == '5')
+	{
+		document.form.TextSensitive.value="People with asthma are the group most at risk.";
+		document.form.HealthEffects.value="Severe respiratory symptoms, such as wheezing and shortness of breath, in people with asthma; increased aggravation of heart or lung disease; possible respiratory effects in general population.";
+		document.form.Cautionary.value="Children, asthmatics, and people with heart or lung disease should remain indoors; everyone else should avoid outdoor exertion.";
+	}
+	else if (document.form.pollutant.selectedIndex == '6' || document.form.pollutant.selectedIndex == '7')
+	{
+		document.form.TextSensitive.value="Children and people with asthma are the groups most at risk.";
+		document.form.HealthEffects.value="Severe respiratory effects and impaired breathing likely in active children and adults and people with respiratory disease, such as asthma; increasingly severe respiratory effects likely in general population.";	
+		document.form.Cautionary.value="Everyone should avoid all outdoor exertion.";
+	}
+	else if (document.form.pollutant.selectedIndex == '8')
+	{
+		document.form.TextSensitive.value="People with asthma or other respiratory diseases, the elderly, and children are the groups most at risk.";
+		document.form.HealthEffects.value="Severe respiratory effects and impaired breathing likely in active children, the elderly, and people with lung disease, such as asthma; increasingly severe respiratory effects likely in general population.";
+		document.form.Cautionary.value="Children, the elderly, and people with lung disease, such as asthma, should remain indoors; everyone else, especially children, should avoid outdoor exertion.";
+	}
+}
+else
+{
+	document.form.outputbox2.style.backgroundColor="#ffffff";
+	document.form.outputbox2.style.color="black";
+	document.form.TextSensitive.value="";
+	document.form.HealthEffects.value="";
+	document.form.Cautionary.value="";
+}
+
+return true;
+}
+
+
+</script>
+
+<center>
+<form name="form" id="form">
+        Select a Pollutant
+          
+            <select onchange="return UnitDetermin(form)" size="1" name="pollutant">
+              <option value="0" selected="selected"> </option>
+              <option value="1">PM2.5 - Particulate &lt;2.5 microns (24hr avg) </option>
+              <option value="2">PM10 - Particulate &lt;10 microns (24hr avg) </option>
+              <option value="3">CO - Carbon Monoxide (8hr avg) </option>
+              <option value="4">SO2 - Sulfur Dioxide (1hr avg) </option>
+	<option value="5">SO2 - Sulfur Dioxide (24hr avg) </option>
+              <option value="6">O3 - Ozone (8hr avg) </option>
+              <option value="7">O3 - Ozone (1hr avg)              </option>
+              <option value="8">NO2 - Nitrogen Dioxide (1hr avg)</option> 
+              </option>
+            </select>
+            <br>
+      Units Required
+    <input size="5" name="txtunit" />
+
+  Enter the Concentration:
+    
+	  
+        <input  size="6" name="inputbox" />
+	
+      
+       <input onclick="return AQICalc(form);_gaq.push(['_trackEvent', 'button', 'calculate', 'conc_aqi_calc']);" type="button" size="10" value="Calculate" name="Calculate" />
+    
+    <input onclick="return ClearColor()" type="reset" value="Reset" name="reset" />
+	
+ AQI<BR>
+        <input size="3" name="outputbox1" /><BR>
+		AQI CATEGORY<BR>
+        <input size="30" name="outputbox2" />
+    
+  <table class="xyz" width="100PX"  >
+  <tbody>
+  </tbody>
+
+  <tr>
+    <td></tbody></td></tr>
+  <tbody>
+  <tr>
+    <th>Sensitive Groups</th></TR>
+	<TR>
+    <th>Health Effects Statements</th></TR>
+	<TR>
+    <th>Cautionary Statements</th></tr>
+  <tr>
+    <td>
+      <textarea name="TextSensitive" rows="15" cols="10"></textarea></td></tr>
+	  <tr>
+    <td><textarea name="HealthEffects" rows="15" cols="10"></textarea></td>
+	<tr>
+    <td width="30">
+    <textarea name="Cautionary" rows="15" cols="2"></textarea></td></tr></tbody></table></tr>
+</form>
+
+<script type="text/javascript" src="scripts/jquery-1.4.2.js"></script>
+<script type='text/javascript' src="scripts/jquery.autocomplete.js"></script>
+<link rel="stylesheet" type="text/css" href="jquery.autocomplete.css" />
+
+<script type="text/javascript">
+$().ready(function() {
+	$("#CITY").autocomplete("autoCompleteMain.php", {
+		width: 150,
+		matchContains: true,
+		//mustMatch: true,
+		//minChars: 0,
+		//multiple: true,
+		//highlight: false,
+		//multipleSeparator: ",",
+		selectFirst: false
+	});
+});
+</script>
+<h2>AIR QUALITY CITYWISE</h2>
+		<h3>Enter your city name</h3>
+        <p></p>
+		<div id="content">
+	<form autocomplete="off"  action="call.php">
+		<p>
+			Enter city Name <label>:</label>
+			<input type="text" name="CITY" id="CITY" />
+		</p>
+		<input type="submit" value="Submit" />
+	</form>
+</div>
+ 
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>	
+<script src="ajax.js" type="text/javascript"></script><script src="http://code.jquery.com/jquery-1.9.1.js"></script>	
+<script src="ajax.js" type="text/javascript"></script>
+                             
+                              
+      
+    
+
+<script type="text/javascript" src="http://s3.amazonaws.com/new.cetrk.com/pages/scripts/0008/9313.js"> </script>
+<a href="http://www.example.com/files/map.pdf" onClick="javascript: pageTracker._trackPageview('/downloads/map'); "> 
+
+        <div class="border"></div>
+        
+      </div>
+    </div>
+    <div class="dragger_container">
+      <div class="dragger"></div>
+    </div>
+    <a class="scrollUpBtn" href="#"></a> <a class="scrollDownBtn" href="#"></a> </div>
+</article>
+<article id="popupContact" class="popupContact">
+  
+    <div class="container">
+      <div class="content"> <a id="popupContactClose"><img src="images/cross.png" width="20" alt="" /></a>
+        <h1>Contact US</h1>
+        <p></p>
+        <form method="post">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" required placeholder="Name" />
+          <label for="name">Subject:</label>
+          <input type="text" name="subject" id="subject" required placeholder="Subject" />
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required placeholder="email@example.com" />
+          <label for="message">Message:</label>
+          <textarea name="message" id="message" required></textarea>
+          <input type="submit" value="Send Message" />
+        </form>
+        <br />
+		<iframe width="400" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps/ms?ie=UTF8&amp;hl=en&amp;oe=UTF8&amp;msa=0&amp;msid=215083984525498784311.0004daa5dc0a9270ced71&amp;t=h&amp;ll=28.584748,77.165136&amp;spn=0.015074,0.034246&amp;z=14&amp;output=embed"></iframe>
+        <div id="social-network"> <a href="#" target="_blank"><img src="images/facebook.png" alt="Facebook" /></a> <a href="#" target="_blank"><img src="images/flickr.png" alt="Flicker" /></a> <a href="#" target="_blank"><img src="images/linkedin.png" alt="Linkedin" /></a> <a href="#" target="_blank"><img src="images/myspace.png" alt="Myspace" /></a> <a href="#" target="_blank"><img src="images/twitter.png" alt="Twitter" /></a> </div>
+      </div>
+    </div>
+    <div class="dragger_container">
+      <div class="dragger"></div>
+    </div>
+    <a class="scrollUpBtn" href="#"></a> <a class="scrollDownBtn" href="#"></a> 
+</article>
+
+<script type="text/javascript" src="scripts/gallery.js"></script> 
+<script type="text/javascript" src="scripts/jquery.mCustomScrollbar.js"></script>
+</body>
+</html>
